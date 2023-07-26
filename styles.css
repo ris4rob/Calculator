@@ -1,0 +1,35 @@
+*, *::before, *::after {
+          box-sizing: border-box;
+          padding: 0;
+          margin: 0;
+}
+
+body {
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #242424;
+}
+
+.calc-container {
+          background-color: forestgreen;
+          width: 20rem;
+          height: 25rem;
+          border-radius: 16px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+}
+
+.calc-wrapper {
+          border: 1px solid red;
+          height: 90%;
+          width: 90%;
+}
+
+.display-wrapper {
+          width: 100%;
+          border: 1px solid blue;
+          padding: 1rem 0px;
+}
