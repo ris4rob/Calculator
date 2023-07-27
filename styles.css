@@ -13,6 +13,7 @@ body {
           justify-content: center;
           align-items: center;
           background-color: #242424;
+          
 }
 
 .calc-container {
@@ -23,6 +24,7 @@ body {
           display: flex;
           justify-content: center;
           align-items: center;
+          z-index: 2;
 }
 
 .calc-wrapper {
@@ -72,4 +74,34 @@ body {
 .btn-wrapper > button:nth-child(2) {
           grid-column-start: 3;
           grid-column-end: 5;
+}
+
+.circle {
+          width: 500px;
+          height: 500px;
+          background-color: rgb(217, 229, 104);
+          z-index: -1;
+          position: absolute;
+          border-radius: 50%;
+          animation: morph 3s ease-in;
+}
+
+@keyframes morph {
+          0%{
+                    border-radius: 3%;
+          }
+          100%{
+                    border-radius: 50%;
+          }
+}
+
+@keyframes morph-reverse {
+          0%{
+                    transform: scale(0);
+                    border-radius: 3%;
+          }
+          100%{
+                    transform: scale(1);
+                    border-radius: 50%;
+          }
 }
