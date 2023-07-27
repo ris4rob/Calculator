@@ -18,7 +18,7 @@ body {
 .calc-container {
           background-color: forestgreen;
           width: 20rem;
-          height: 25rem;
+          /* height: 25rem; */
           border-radius: 16px;
           display: flex;
           justify-content: center;
@@ -26,17 +26,20 @@ body {
 }
 
 .calc-wrapper {
-          border: 1px solid red;
-          height: 90%;
+          /* border: 1px solid red; */
+          /* height: 90%; */
           width: 90%;
+          margin: 1rem 0rem;
 }
 
 .display-wrapper {
-          width: 100%;
+          max-width: 100%;
+          margin: .5rem;
           border: 1px solid blue;
-          padding: 1rem 0px;
+          padding: 1rem .5rem;
           text-align: end;
-          padding-right: .5rem;
+          border-radius: 6px;
+          background-color: #fff;
 }
 
 .display {
@@ -46,15 +49,27 @@ body {
 
 .btn-wrapper {
           width: 100%;
-          border: 1px solid blue;
+          /* border: 1px solid blue; */
           padding: 4px;
-          padding-left: 10px;
+          display: grid;
+          grid-template-rows: repeat(5, 1fr);
+          grid-template-columns: repeat(4, 1fr);
 }
 
 .btn-wrapper > button {
-          height: 4rem;
-          width: 4rem;
+          /* height: 4rem; */
+          /* width: 4rem; */
           margin: 1px;
           border-radius: 8px;
           font-size: 2rem;
+}
+
+.btn-wrapper > button:first-child {
+          grid-column-start: 1;
+          grid-column-end: 3;
+}
+
+.btn-wrapper > button:nth-child(2) {
+          grid-column-start: 3;
+          grid-column-end: 5;
 }
