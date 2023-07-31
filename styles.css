@@ -85,7 +85,7 @@ body {
           z-index: -1;
           position: absolute;
           border-radius: 50%;
-          animation: morph 3s ease-in;
+          /* animation: morph 3s ease-in; */
 }
 
 @keyframes morph {
