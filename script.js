@@ -1,7 +1,7 @@
 // Display
 const display = document.querySelector('#display');
 
-// Variables for buttons
+// Variables for individual buttons
 const zero = document.querySelector('#zero');
 const one = document.querySelector('#one');
 const two = document.querySelector('#two');
@@ -53,106 +53,26 @@ function calculate(operator, a, b) {
   }
 }
 
-// Events for buttons
-one.addEventListener('click', function () {
-  if (count === 0) {
-    display.value += 1;
-  } else if (count === 1) {
-    display.value = '';
-    display.value += 1;
-    count--;
-  }
+// Events for numerical buttons
+numberBtns.forEach((btn) => {
+  btn.addEventListener('click', function () {
+    if (display.value.length <= 9) {
+      numberBtns.disabled = false;
+      if (count === 0) {
+        display.value += btn.attributes[0].value;
+      } else if (count === 1) {
+        display.value = '';
+        display.value += btn.attributes[0].value;
+        count--;
+      }
+    } else {
+      numberBtns.disabled = true;
+    }
+  });
 });
-two.addEventListener('click', function () {
-  if (count === 0) {
-    display.value += 2;
-  } else if (count === 1) {
-    display.value = '';
-    display.value += 2;
-    count--;
-  }
-});
-three.addEventListener('click', function () {
-  if (count === 0) {
-    display.value += 3;
-  } else if (count === 1) {
-    display.value = '';
-    display.value += 3;
-    count--;
-  }
-});
-four.addEventListener('click', function () {
-  if (count === 0) {
-    display.value += 4;
-  } else if (count === 1) {
-    display.value = '';
-    display.value += 4;
-    count--;
-  }
-});
-five.addEventListener('click', function () {
-  if (count === 0) {
-    display.value += 5;
-  } else if (count === 1) {
-    display.value = '';
-    display.value += 5;
-    count--;
-  }
-});
-six.addEventListener('click', function () {
-  if (count === 0) {
-    display.value += 6;
-  } else if (count === 1) {
-    display.value = '';
-    display.value += 6;
-    count--;
-  }
-});
-seven.addEventListener('click', function () {
-  if (count === 0) {
-    display.value += 7;
-  } else if (count === 1) {
-    display.value = '';
-    display.value += 7;
-    count--;
-  }
-});
-eight.addEventListener('click', function () {
-  if (count === 0) {
-    display.value += 8;
-  } else if (count === 1) {
-    display.value = '';
-    display.value += 8;
-    count--;
-  }
-});
-nine.addEventListener('click', function () {
-  if (count === 0) {
-    display.value += 9;
-  } else if (count === 1) {
-    display.value = '';
-    display.value += 9;
-    count--;
-  }
-});
-zero.addEventListener('click', function () {
-  if (count === 0) {
-    display.value += 0;
-  } else if (count === 1) {
-    display.value = '';
-    display.value += 0;
-    count--;
-  }
-});
-dot.addEventListener('click', function () {
-  if (count === 0) {
-    display.value += '.';
-  } else if (count === 1) {
-    display.value = '';
-    display.value += '.';
-    count--;
-  }
-});
+
+// Events for clear and delete button
+
 clear.addEventListener('click', function () {
   display.value = '';
   count = 0;
@@ -241,11 +161,104 @@ equals.addEventListener('click', function () {
   operator = '';
 });
 
-// Once A is not NULL
-// Once Operator is not NULL
-// When number is pressed clear display once!
-if (display.value.length === 11) {
-  numberBtns.disabled = true;
-} else {
-  numberBtns.disabled = false;
-}
+// OLD EVENTS FOR BUTTONS BEFORE REFACTOR LOOP
+// Events for buttons
+// one.addEventListener('click', function () {
+//   if (count === 0) {
+//     display.value += 1;
+//   } else if (count === 1) {
+//     display.value = '';
+//     display.value += 1;
+//     count--;
+//   }
+// });
+// two.addEventListener('click', function () {
+//   if (count === 0) {
+//     display.value += 2;
+//   } else if (count === 1) {
+//     display.value = '';
+//     display.value += 2;
+//     count--;
+//   }
+// });
+// three.addEventListener('click', function () {
+//   if (count === 0) {
+//     display.value += 3;
+//   } else if (count === 1) {
+//     display.value = '';
+//     display.value += 3;
+//     count--;
+//   }
+// });
+// four.addEventListener('click', function () {
+//   if (count === 0) {
+//     display.value += 4;
+//   } else if (count === 1) {
+//     display.value = '';
+//     display.value += 4;
+//     count--;
+//   }
+// });
+// five.addEventListener('click', function () {
+//   if (count === 0) {
+//     display.value += 5;
+//   } else if (count === 1) {
+//     display.value = '';
+//     display.value += 5;
+//     count--;
+//   }
+// });
+// six.addEventListener('click', function () {
+//   if (count === 0) {
+//     display.value += 6;
+//   } else if (count === 1) {
+//     display.value = '';
+//     display.value += 6;
+//     count--;
+//   }
+// });
+// seven.addEventListener('click', function () {
+//   if (count === 0) {
+//     display.value += 7;
+//   } else if (count === 1) {
+//     display.value = '';
+//     display.value += 7;
+//     count--;
+//   }
+// });
+// eight.addEventListener('click', function () {
+//   if (count === 0) {
+//     display.value += 8;
+//   } else if (count === 1) {
+//     display.value = '';
+//     display.value += 8;
+//     count--;
+//   }
+// });
+// nine.addEventListener('click', function () {
+//   if (count === 0) {
+//     display.value += 9;
+//   } else if (count === 1) {
+//     display.value = '';
+//     display.value += 9;
+//     count--;
+//   }
+// });
+// zero.addEventListener('click', function () {
+//   if (count === 0) {
+//     display.value += 0;
+//   } else if (count === 1) {
+//     display.value = '';
+//     display.value += 0;
+//     count--;
+//   }
+// });
+// dot.addEventListener('click', function () {
+//   if (count === 0) {
+//     display.value += '.';
+//   } else if (count === 1) {
+//     display.value = '';
+//     display.value += '.';
+//     count--;
+//   }
+// });
