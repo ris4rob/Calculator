@@ -21,6 +21,9 @@ const take = document.querySelector('#take');
 const times = document.querySelector('#times');
 const divide = document.querySelector('#divide');
 
+// Variable for all numerical buttons
+const numberBtns = document.querySelectorAll('.number-btn');
+
 // Variables for calculation
 let a;
 let b;
@@ -30,8 +33,8 @@ let operator;
 // Calculate result takes a string operator and 2 numbers,
 // Returns calculation of a and b based on chosen operator;
 function calculate(operator, a, b) {
-  a = parseInt(a);
-  b = parseInt(b);
+  a = parseFloat(a);
+  b = parseFloat(b);
   switch (operator) {
     case '+':
       return a + b;
@@ -51,35 +54,104 @@ function calculate(operator, a, b) {
 }
 
 // Events for buttons
-// one.addEventListener('click', function () {
-//   display.value += 1;
-// });
-// two.addEventListener('click', function () {
-//   display.value += 2;
-// });
+one.addEventListener('click', function () {
+  if (count === 0) {
+    display.value += 1;
+  } else if (count === 1) {
+    display.value = '';
+    display.value += 1;
+    count--;
+  }
+});
+two.addEventListener('click', function () {
+  if (count === 0) {
+    display.value += 2;
+  } else if (count === 1) {
+    display.value = '';
+    display.value += 2;
+    count--;
+  }
+});
 three.addEventListener('click', function () {
-  display.value += 3;
+  if (count === 0) {
+    display.value += 3;
+  } else if (count === 1) {
+    display.value = '';
+    display.value += 3;
+    count--;
+  }
 });
 four.addEventListener('click', function () {
-  display.value += 4;
+  if (count === 0) {
+    display.value += 4;
+  } else if (count === 1) {
+    display.value = '';
+    display.value += 4;
+    count--;
+  }
 });
 five.addEventListener('click', function () {
-  display.value += 5;
+  if (count === 0) {
+    display.value += 5;
+  } else if (count === 1) {
+    display.value = '';
+    display.value += 5;
+    count--;
+  }
 });
 six.addEventListener('click', function () {
-  display.value += 6;
+  if (count === 0) {
+    display.value += 6;
+  } else if (count === 1) {
+    display.value = '';
+    display.value += 6;
+    count--;
+  }
 });
 seven.addEventListener('click', function () {
-  display.value += 7;
+  if (count === 0) {
+    display.value += 7;
+  } else if (count === 1) {
+    display.value = '';
+    display.value += 7;
+    count--;
+  }
 });
 eight.addEventListener('click', function () {
-  display.value += 8;
+  if (count === 0) {
+    display.value += 8;
+  } else if (count === 1) {
+    display.value = '';
+    display.value += 8;
+    count--;
+  }
 });
 nine.addEventListener('click', function () {
-  display.value += 9;
+  if (count === 0) {
+    display.value += 9;
+  } else if (count === 1) {
+    display.value = '';
+    display.value += 9;
+    count--;
+  }
 });
 zero.addEventListener('click', function () {
-  display.value += 0;
+  if (count === 0) {
+    display.value += 0;
+  } else if (count === 1) {
+    display.value = '';
+    display.value += 0;
+    count--;
+  }
+});
+dot.addEventListener('click', function () {
+  if (count === 0) {
+    display.value += '.';
+  } else if (count === 1) {
+    display.value = '';
+    display.value += '.';
+    count--;
+  }
 });
 clear.addEventListener('click', function () {
   display.value = '';
@@ -109,6 +181,57 @@ add.addEventListener('click', function () {
     operator = '+';
   }
 });
+// TIMES
+times.addEventListener('click', function () {
+  a = display.value;
+  operator = '*';
+  count++;
+});
+times.addEventListener('click', function () {
+  // Handle the case where 'a' is null or not a valid number.
+  if (a === null || isNaN(a)) {
+    a = display.value;
+    operator = '*';
+    count++;
+  } else {
+    b = display.value;
+    operator = '*';
+  }
+});
+//TAKE
+take.addEventListener('click', function () {
+  a = display.value;
+  operator = '-';
+  count++;
+});
+take.addEventListener('click', function () {
+  // Handle the case where 'a' is null or not a valid number.
+  if (a === null || isNaN(a)) {
+    a = display.value;
+    operator = '-';
+    count++;
+  } else {
+    b = display.value;
+    operator = '-';
+  }
+});
+//DIVIDE
+divide.addEventListener('click', function () {
+  a = display.value;
+  operator = '/';
+  count++;
+});
+divide.addEventListener('click', function () {
+  // Handle the case where 'a' is null or not a valid number.
+  if (a === null || isNaN(a)) {
+    a = display.value;
+    operator = '/';
+    count++;
+  } else {
+    b = display.value;
+    operator = '/';
+  }
+});
 // EQUALS
 equals.addEventListener('click', function () {
   b = display.value;
@@ -121,22 +244,8 @@ equals.addEventListener('click', function () {
 // Once A is not NULL
 // Once Operator is not NULL
 // When number is pressed clear display once!
-
-one.addEventListener('click', function () {
-  if (count === 0) {
-    display.value += 1;
-  } else if (count === 1) {
-    display.value = '';
-    display.value += 1;
-    count--;
-  }
-});
-two.addEventListener('click', function () {
-  if (count === 0) {
-    display.value += 2;
-  } else if (count === 1) {
-    display.value = '';
-    display.value += 2;
-    count--;
-  }
-});
+if (display.value.length === 11) {
+  numberBtns.disabled = true;
+} else {
+  numberBtns.disabled = false;
+}
