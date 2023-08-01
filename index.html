@@ -14,30 +14,32 @@
           <input
             maxlength="6"
             type="text"
+            dir="rtl"
             id="display"
             class="display"
             name="numeric-input"
             oninput="this.value = this.value.replace(/[^0-9]/g, '')"
             required
+            disabled
           />
         </div>
         <div class="btn-wrapper">
           <button data-btn="clearbtn" id="clear">Clear</button
           ><button data-btn="deletebtn" id="del">Delete</button
-          ><button data-btn="7" id="seven">7</button
-          ><button data-btn="8" id="eight">8</button
-          ><button data-btn="9" id="nine">9</button
+          ><button data-btn="7" id="seven" class="number-btn">7</button
+          ><button data-btn="8" id="eight" class="number-btn">8</button
+          ><button data-btn="9" id="nine" class="number-btn">9</button
           ><button data-btn="divide" id="divide">÷</button
-          ><button data-btn="4" id="four">4</button
-          ><button data-btn="5" id="five">5</button
-          ><button data-btn="6" id="six">6</button
+          ><button data-btn="4" id="four" class="number-btn">4</button
+          ><button data-btn="5" id="five" class="number-btn">5</button
+          ><button data-btn="6" id="six" class="number-btn">6</button
           ><button data-btn="x" id="times">X</button
-          ><button data-btn="1" id="one">1</button
-          ><button data-btn="2" id="two">2</button
-          ><button data-btn="3" id="three">3</button
+          ><button data-btn="1" id="one" class="number-btn">1</button
+          ><button data-btn="2" id="two" class="number-btn">2</button
+          ><button data-btn="3" id="three" class="number-btn">3</button
           ><button data-btn="-" id="take">-</button
-          ><button data-btn="0" id="zero">0</button
-          ><button data-btn="." id="dot">.</button
+          ><button data-btn="0" id="zero" class="number-btn">0</button
+          ><button data-btn="." id="dot" class="number-btn">.</button
           ><button data-btn="=" id="equals">=</button
           ><button data-btn="+" id="add">+</button>
         </div>
